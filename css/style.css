@@ -1,0 +1,14 @@
+/*RESET E ESTILO BASE*/
+/*'0' é o setor univrsal que aplica o estilo a TODOS os elemntos da página*/
+*{/*begin*/
+ margin: ; 0;/*remove margens padrão que osnavegadores adicional*/
+ padding: ;0; /*remove espaçamentos internos padão*/
+ box-sizing: border-box /*faz com que p padding e border sejam incluidos na largura e altura total do elemento*/
+ backgroun
+}/*end*/
+body{
+    /*Fontes: segoe UI é a primeira opção se não tiver, vai tentando as proximas*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: ; 1.6; /*altura entre as linhas 1.6x o tamanho da fonte*/
+    color: #333 /*cor do texto*/
+}
