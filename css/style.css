@@ -4,11 +4,36 @@
  margin: ; 0;/*remove margens padrão que osnavegadores adicional*/
  padding: ;0; /*remove espaçamentos internos padão*/
  box-sizing: border-box /*faz com que p padding e border sejam incluidos na largura e altura total do elemento*/
- backgroun
+
 }/*end*/
 body{
     /*Fontes: segoe UI é a primeira opção se não tiver, vai tentando as proximas*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: ; 1.6; /*altura entre as linhas 1.6x o tamanho da fonte*/
-    color: #333 /*cor do texto*/
+    line-height: 1.6; /*altura entre as linhas 1.6x o tamanho da fonte*/
+    color: #333; /*cor do texto 'cinza escuro'*/
+    /*gradiente de fundo 135deg é a direção, de roxo claro para roxo escuro*/
+    background: linear-gradient(135deg, #25e7de 0%, #ff2bdf 100%);
+min-height: 100vh; /* vh = viewport height, minimo de 100% da altura da tela*/
+}
+/*header (cabeçalho)*/
+header{
+    background-color: rgba(230, 255, 255, 0.95);/*Branco com 0.95 = 95% de opacidade*/
+    padding: 1rem 5%;/*rem =1.6px(tamanho padrao da fonte), 5% largura do contador*/
+    display: flex;/*ativa o flebox para layout flexivel*/
+    align-items: center;/*alinha os itens vericalmente ao centro */
+    justify-content: space-between;/*espaço entre os itens (logo de um lado e menu do outro*/
+    flex-wrap: wrap;/*permite a quebra de linhas em telas pequenas*/
+    gap: 1rem;/*espaçamento entre os itens flexiveis*/
+    box-shadow: 0 px 20px rgba(0,0,0,0);/*sombra: eixo x eixo y desfoque na cor*/
+    position: sticky;/*grudando topo no topo ao rolar a pagina*/
+    top:0;/*distancia do topo ao grudar*/
+    z-index: 1000; /*garante que fique acima dos outros elemntos*/
+} 
+header img{
+    height: 60px;/*fixando a altura da imagem em pixel*/
+    width: auto;/*ajusta a lardura automaticamnete de acordo com a largura(mantem proporcional a imagem)*/
+    transition: transform 0.3s ease;/*tranaição suave de 3 segundos para a animação*/
+}
+header img:hover{/*hover = quando passa o mause por cima faz alguma coisa*/
+transform: scale(1.05);/*aumenta 5% do tamanho da imagem original*/
 }
