@@ -10,21 +10,21 @@ body{
     /*Fontes: segoe UI é a primeira opção se não tiver, vai tentando as proximas*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6; /*altura entre as linhas 1.6x o tamanho da fonte*/
-    color: #333; /*cor do texto 'cinza escuro'*/
+    color: #fcfcfc; /*cor do texto 'cinza escuro'*/
     /*gradiente de fundo 135deg é a direção, de roxo claro para roxo escuro*/
-    background: linear-gradient(135deg, #25e7de 0%, #ff2bdf 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
 min-height: 100vh; /* vh = viewport height, minimo de 100% da altura da tela*/
 }
 /*header (cabeçalho)*/
 header{
-    background-color: rgba(230, 255, 255, 0.95);/*Branco com 0.95 = 95% de opacidade*/
+    background-color: rgba(0, 0, 0, 0.95) rgba(255, 255, 255, 0.95);/*Branco com 0.95 = 95% de opacidade*/
     padding: 1rem 5%;/*rem =1.6px(tamanho padrao da fonte), 5% largura do contador*/
     display: flex;/*ativa o flebox para layout flexivel*/
     align-items: center;/*alinha os itens vericalmente ao centro */
     justify-content: space-between;/*espaço entre os itens (logo de um lado e menu do outro*/
     flex-wrap: wrap;/*permite a quebra de linhas em telas pequenas*/
     gap: 1rem;/*espaçamento entre os itens flexiveis*/
-    box-shadow: 0 px 20px rgba(0,0,0,0);/*sombra: eixo x eixo y desfoque na cor*/
+    box-shadow: 0 px 20px rgba(255, 255, 255, 0);/*sombra: eixo x eixo y desfoque na cor*/
     position: sticky;/*grudando topo no topo ao rolar a pagina*/
     top:0;/*distancia do topo ao grudar*/
     z-index: 1000; /*garante que fique acima dos outros elemntos*/
@@ -36,4 +36,54 @@ header img{
 }
 header img:hover{/*hover = quando passa o mause por cima faz alguma coisa*/
 transform: scale(1.05);/*aumenta 5% do tamanho da imagem original*/
+}
+nav a{ 
+    text-decoration: none;/*remove o sublinhado padrão dos textos*/
+    color: #fafafa;/*defino uma cor do texto roxo*/
+    font-weight: 600;/*peso da fonte (semi negrito)*/
+    padding: 0.5rem 1rem;/*8px em cima/baixo e 16 px nas laterais*/
+    border-radius: 25px;/*bordas arrendondadas*/
+    transition: all 0.3 ease;/*transição suave para todas as propriedades*/
+    position: relative;/*necessário para pseudo-elemnto :: afer*/
+}
+nav a:hover{
+    background-color: #a3a1a1;
+    color: rgb(0, 0, 0);
+    transform: translateY(-2px);/*move 2 pixels para cima */
+    box-shadow: 0.5px 15px rgba (188, 75, 162, 0.3);/*sombra roxa suave*/
+}
+nav a::after{/*pseudo elemnto para criar a linha animada abaixo dos links*/
+content: ''; /*necessario para criar um elemnto */
+position: absolute; /*posição em relação ao elemento*/
+bottom: 0; /*cola na parte inferior*/
+left: 50%; /*começa no meio*/
+transform: translateX(-50%); /*centraliza horizontalmente*/
+width: 0; /*começa com a largura 0*/
+height: 2px; /*altura de linha*/
+background-color: #e7e7e7;
+transition: width 0.3s ease;/*anima apenas a largura*/
+}
+nav a:hover::after{
+    width: 80%;/*expande para 80% da largura do link*/
+}
+/*===conteudo principal*/
+main{
+    max-width: 1200px; /*largura máxima em pixels */
+    margin: 2rem auto; /*32px cima/baixo auto nas laterais (centralizada)*/
+    padding: 2rem ; /*espaçamento interno de 32px em todos os lados */
+    background-color: #000000;
+    border-radius: 20px; /*borda arrendondada*/
+    box-shadow:  0 10px 40px; /*uma sombra um pouco mais pronunciada*/
+    backdrop-filter: blur (10); /*efeito de desfoque no fundo*/
+    animation: slideIn 0.5 ease-out ;/*animação da entrada*/
+}
+/*===DEFINIÇÂO DA ANIMAÇÂO DO SLIDEN*/
+@keyframes slideIn {
+    from{ /*estado inicial*/
+    opacity: 0; /*invisivel*/
+    transform: translateY(30px) /*30px para baixo */
+    }
+    to{/*estado final*/
+    opacity: 10; /*visivel*/ 
+    transform: translate(10);/*posição inicial*/}
 }
